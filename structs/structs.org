@@ -1,0 +1,97 @@
+* Structs
+** Defining
+#+BEGIN_SRC rust
+struct User {
+    name: String,
+    email: String,
+    sign_in_count: u64,
+    active: bool,
+}
+#+END_SRC
+*** Instantiating
+#+BEGIN_SRC rust
+let user = User {
+    email: String::from("someone@example.com"),
+    name: String::from("someusername123"),
+    active: true,
+    sign_in_count: 1,
+};
+#+END_SRC
+
+Note that the entire instance must be mutable or immutable, Rust doesn't allow
+us to mark only certain fields as mutable.
+
+#+BEGIN_SRC rust
+let mut user = User {
+    email: String::from("someone@example.com"),
+    name: String::from("someusername123"),
+    active: true,
+    sign_in_count: 1,
+};
+
+user.email = String::from("anotheremail@example.com");
+#+END_SRC
+**** The Field Init Shorthand
+#+BEGIN_SRC rust
+fn build_user(email: String, name: String) -> User {
+    User {
+        email,
+        name,
+        active: true,
+        sign_in_count: 1,
+    }
+}
+#+END_SRC
+**** Struct Update Syntax
+#+BEGIN_SRC rust
+let user2 = User {
+    email: String::from("another@example.com"),
+    name: String::from("anotherusername567"),
+    ..user
+};
+#+END_SRC
+**** Tuple Structs
+#+BEGIN_SRC rust
+struct Color(i32, i32, i32);
+struct Point(i32, i32, i32);
+
+let black = Color(0, 0, 0);
+let origin = Point(0, 0, 0);
+#+END_SRC
+**** Unit-Like Structs without Any Fields
+#+BEGIN_SRC rust
+struct T();
+#+END_SRC
+**** Defining Methods
+#+BEGIN_SRC rust
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+
+fn main() {
+    let rect1 = Rectangle { width: 30, height: 50 };
+
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        rect1.area()
+    );
+}
+#+END_SRC
+**** Associated Functions
+#+BEGIN_SRC rust
+impl Rectangle {
+    fn square(size: u32) -> Rectangle {
+        Rectangle { width: size, height: size }
+    }
+}
+
+let sq = Rectangle::square(8);
+#+END_SRC
