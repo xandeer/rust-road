@@ -1,0 +1,29 @@
+[package]
+name = "generic"
+version = "0.1.0"
+authors = ["Kevin Du <kkxandeer@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[[bin]]
+name = "fn1"
+path = "src/fn1.rs"
+
+[[bin]]
+name = "fn2"
+path = "src/fn2.rs"
+
+[[bin]]
+name = "struct"
+path = "src/struct.rs"
+
+[[bin]]
+name = "method1"
+path = "src/method1.rs"
+
+[[bin]]
+name = "method2"
+path = "src/method2.rs"
