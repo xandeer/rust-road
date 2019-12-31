@@ -133,7 +133,6 @@ error[E0369]: binary operation `>` cannot be applied to type `T`
   |            T
   |
   = note: `T` might need a bound for `std::cmp::PartialOrd`
-
 #+END_EXAMPLE
 
 The note mentions =std::cmp::PartialOrd=, which is a /trait/. We'll talk about
