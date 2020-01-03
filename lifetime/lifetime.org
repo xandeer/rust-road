@@ -144,7 +144,7 @@ If we try to implement the ~longest~ function as shown in below, it won't
 compile.
 
 #+SRCNAME: src/main.rs
-#+BEGIN_SRC rust :tangle src/main.rs :noweb yes
+#+BEGIN_SRC rust :tangle src/main.rs
 <<main>>
    
 fn longest(x: &str, y: &str) -> &str {
