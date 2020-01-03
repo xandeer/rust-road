@@ -1,0 +1,21 @@
+[package]
+name = "lifetime"
+version = "0.1.0"
+authors = ["Kevin Du <kkxandeer@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[[bin]]
+name = "l2"
+path = "src/l2.rs"
+
+[[bin]]
+name = "l3"
+path = "src/l3.rs"
+
+[[bin]]
+name = "l4"
+path = "src/l4.rs"
